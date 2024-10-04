@@ -1,5 +1,5 @@
 # MonoGame3D
-3D extensions and examples for an awesome MonoGame framework.
+3D extensions and examples for the awesome MonoGame framework.
 
 ## Introduction ##
 The goal of this project is to provide useful additions for doing 3D work with the MonoGame framework, and providing sample code and tutorials for:
