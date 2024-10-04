@@ -1,0 +1,15 @@
+Interior and the red dude:
+    Created by blendernerd143 (https://blendswap.com/blend/24702).
+Old TV:
+    Created by rblackwell (https://blendswap.com/blend/19479).
+Zombie:
+    Created by tigertowel (https://blendswap.com/blend/13868).
+Cage:
+    https://www.cgtrader.com/free-3d-models/various/various-models/square-metal-cage
+Painting frame:
+    https://www.cgtrader.com/product/interior/painting-with-frame
+TV noise shader:
+    https://www.shadertoy.com/view/4XlSRl
+Pong shader:
+    Somewhere from ShaderToy too.
+

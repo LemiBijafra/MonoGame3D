@@ -1,0 +1,1 @@
+dotnet add package AssimpNet --version 4.1.0
