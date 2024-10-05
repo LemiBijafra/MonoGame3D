@@ -10,10 +10,9 @@ The goal of this project is to provide useful additions for doing 3D work with t
 
 ## Example Project ##
 A dystopian scene using a number of modified publically available 3D models (see the credits section).
-The scene is created in Blender:
+### Blender Scene ###
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true)
-Current rendering in the demo app:
-
+### Current Rendering With The Test App ###
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true)
 
 ## Building ##
