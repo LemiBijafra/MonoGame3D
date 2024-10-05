@@ -13,6 +13,7 @@ A dystopian scene using a number of modified publically available 3D models (see
 The scene is created in Blender:
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true)
 Current rendering in the demo app:
+
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true)
 
 ## Building ##
