@@ -17,7 +17,7 @@ Current rendering in the demo app:
 
 ## Building ##
 The sample project was done using Visual Studio 2022 on Windows, targeting Desktop GL (i.e. platform agnostic). In case you get a build error mentioning `./config/dotnet-tools.json` file, open it in Explorer and check the "Unblock" option. Please chime in in case of other issues.
-In case the build fails because of the missing AssimpNet reference, invoke the `InstallAssimpNet.bat`.
+In case the build fails because of the missing AssimpNet reference, invoke `InstallAssimpNet.bat`.
 
 ## TODO ##
 * Finalize the Phong shader, currently just in the beginning.
