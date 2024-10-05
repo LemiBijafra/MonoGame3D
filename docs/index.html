@@ -1,1 +1,34 @@
-<p>Yeah
+<h1 id="monogame3d">MonoGame3D</h1>
+<p>3D extensions and examples for the awesome MonoGame framework.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The goal of this project is to provide useful additions for doing 3D work with the MonoGame framework, in the form of sample code and tutorials for:</p>
+<ul>
+<li>Dynamic loading of 3D scenes.</li>
+<li>Phong shader.</li>
+<li>Importing scenes from Blender.</li>
+<li>Integrating custom shaders (especially from ShaderToy).</li>
+</ul>
+<h2 id="exampleproject">Example Project</h2>
+<p>A dystopian scene using a number of modified publically available 3D models (see the credits section).
+The scene is created in Blender:
+<img src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true" alt="alt text" />
+Current rendering in the demo app:
+<img src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true" alt="alt text" /></p>
+<h2 id="building">Building</h2>
+<p>The sample project was done using Visual Studio 2022 on Windows, targeting Desktop GL (i.e. platform agnostic). In case you get a build error mentioning <code>./config/dotnet-tools.json</code> file, open it in Explorer and check the "Unblock" option. Please chime in in case of other issues.
+In case the build fails because of the missing AssimpNet reference, invoke <code>InstallAssimpNet.bat</code>.</p>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>Fix the issue with textures.</li>
+<li>Finalize the Phong shader, currently just in the beginning.</li>
+<li>Finalize the <code>Material</code> class.</li>
+<li>Texture manager for dynamically loaded textures.</li>
+<li>Investigate F# scripting possibilites.</li>
+<li>Blender camera import.</li>
+<li>Animation.</li>
+</ul>
+<h2 id="contact">Contact</h2>
+<p>Pull requests are more than welcome!</p>
+<h2 id="credits">Credits</h2>
+<p>Apart MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for loading 3D scenes.</p>
+<p>For artwork credits, please refer to <code>ARTWORK_CREDITS.txt</code>.</p>
