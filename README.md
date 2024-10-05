@@ -20,6 +20,7 @@ The sample project was done using Visual Studio 2022 on Windows, targeting Deskt
 In case the build fails because of the missing AssimpNet reference, invoke `InstallAssimpNet.bat`.
 
 ## TODO ##
+* Fix the issue with textures.
 * Finalize the Phong shader, currently just in the beginning.
 * Finalize the `Material` class.
 * Texture manager for dynamically loaded textures.
