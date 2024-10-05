@@ -13,4 +13,4 @@ TV noise shader:
 Pong shader:
     Somewhere from ShaderToy too.
 Painting on the wall:
-    LemiBijafra
+    Created by LemiBijafra: Creative Commons CC BY License (https://creativecommons.org/licenses/by/4.0/)
