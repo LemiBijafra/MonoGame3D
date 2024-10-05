@@ -2,7 +2,7 @@
 3D extensions and examples for the awesome MonoGame framework.
 
 ## Introduction ##
-The goal of this project is to provide useful additions for doing 3D work with the MonoGame framework, and providing sample code and tutorials for:
+The goal of this project is to provide useful additions for doing 3D work with the MonoGame framework, in the form of sample code and tutorials for:
 * Dynamic loading of 3D scenes.
 * Phong shader.
 * Importing scenes from Blender.
