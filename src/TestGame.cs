@@ -1,7 +1,4 @@
-﻿// Uncomment this for using the BasicEffect (with some texturing issues) instead of a WIP Phong shader
-//#define USE_BASIC_EFFECT
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +62,6 @@ namespace Mg3d
         public void LoadImportedScene()
         {
             modelLoader = new ModelLoader();
-            //modelLoader.LoadFromFile("../../../Content/LowPolyInterior_1.obj");
             modelLoader.LoadFromFile("../../../Content/LowPolyInterior_1.obj");
             node = FromAssimp.ConvertNodeTree(GraphicsDevice, modelLoader.Scene, modelLoader.Scene.RootNode, null);
             // Here we define the shaders for particular meshes:
@@ -89,31 +85,8 @@ namespace Mg3d
             var projMx = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 800 / 480f, .1f, 100f);
             var overallMx = viewMx * projMx;
             tvShader.Parameters["WorldViewProjection"].SetValue(overallMx);
-#if USE_BASIC_EFFECT
-            var basicEffect = new BasicEffect(grDev);
-            basicEffect.World = Matrix.Identity;
-            basicEffect.View = viewMx;
-            basicEffect.Projection = projMx;
-            
-            basicEffect.LightingEnabled = true;
-            basicEffect.DirectionalLight0.Enabled = true;
-            basicEffect.DirectionalLight0.Direction = new Vector3(1f, 0f, 0f);
-            basicEffect.DirectionalLight0.DiffuseColor = new Vector3(1f, 1f, 1f);
-            basicEffect.DirectionalLight0.SpecularColor = new Vector3(1f, 1f, 1f);
-            basicEffect.DirectionalLight1.Direction = new Vector3(0f, -1f, 0f);
-            basicEffect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
-            basicEffect.DirectionalLight1.SpecularColor = new Vector3(1f, 1f, 1f);
-            basicEffect.DiffuseColor = new Vector3(1f, 0f, 1f);
-
-            basicEffect.DirectionalLight1.Enabled = true;
-            basicEffect.DirectionalLight2.Enabled = false;
-            Renderer.DrawNodeRecur(grDev, basicEffect, meshEffectMap, node);
-#else
             phongShader.Parameters["WorldViewProjection"].SetValue(overallMx);
             Renderer.DrawNodeRecur(grDev, phongShader, meshEffectMap, node);
-#endif
-
-
         }
         public static void RunIt()
         {

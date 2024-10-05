@@ -14,3 +14,5 @@ Pong shader:
     Somewhere from ShaderToy too.
 Painting on the wall:
     Created by LemiBijafra: Creative Commons CC BY License (https://creativecommons.org/licenses/by/4.0/)
+Wall paint:
+    https://freestocktextures.com/texture/white-peeling-wall,1413.html (license: https://freestocktextures.com/license/)

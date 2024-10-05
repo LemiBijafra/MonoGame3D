@@ -49,6 +49,11 @@ namespace Mg3d
                 if (texture != null)
                 {
                     mesh.Material.TextureSamplerProps["DiffuseTexture"] = texture;
+                    mesh.Material.TextureEnabled = true;
+                }
+                else
+                {
+                    mesh.Material.TextureEnabled = false;
                 }
             }
 

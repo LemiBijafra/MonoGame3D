@@ -48,9 +48,7 @@ float4 PSMain(VSOutputTx input) : COLOR
 {
     float2 uv = input.TexCoord;
     float4 texColor = tex2D(TextureSampler, float2(uv.x, 1. - uv.y));
-    
-    return (texColor + 0.2)  * DiffuseColor;
-    return DiffuseColor;
+    return texColor + DiffuseColor;
 }
 
 technique Phong

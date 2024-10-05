@@ -21,5 +21,6 @@ namespace Mg3d
         public PropMap<Vector4> Vector4Props;
         public PropMap<Matrix> Matrix4x4Props;
         public PropMap<Texture2D> TextureSamplerProps;
+        public bool TextureEnabled { get; set; } = false;
     }
 }

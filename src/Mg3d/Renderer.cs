@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -20,24 +21,29 @@ namespace Mg3d
         {
             foreach (var mesh in node.Meshes)
             {
+                if (mesh.Name == "Couch")
+                {
+                    var i = 0;
+                    ++i;
+                }
                 Effect effect = implicitEffect;
+                bool explicitEffect = false;
                 if (explicitEffects != null)
                 {
                     if (explicitEffects.ContainsKey(mesh.Name))
                     {
                         effect = explicitEffects[mesh.Name];
+                        explicitEffect = true;
                     }
                     else
                     {
                         effect.Parameters["DiffuseColor"].SetValue(mesh.Material.Vector4Props["DiffuseColor"]);
-                        //(effect as BasicEffect).TextureEnabled = true;
                     }
                 }
 
                 var textureSamplerName = "DiffuseTexture";
-                //var textureSamplerName = "Texture";
                 Texture2D oldTex = null;
-                if (effect.Parameters[textureSamplerName] != null)
+                if (mesh.Material.TextureEnabled && effect.Parameters[textureSamplerName] != null)
                 {
                     oldTex = effect.Parameters[textureSamplerName].GetValueTexture2D();
                     if (mesh.Material.TextureSamplerProps != null)
@@ -45,7 +51,15 @@ namespace Mg3d
                         if (mesh.Material.TextureSamplerProps.Exists(textureSamplerName))
                         {
                             effect.Parameters[textureSamplerName].SetValue(mesh.Material.TextureSamplerProps["DiffuseTexture"]);
+                            effect.Parameters["DiffuseColor"].SetValue(new Vector3(0, 0, 0));
                         }
+                    }
+                }
+                else
+                {
+                    if (!explicitEffect)
+                    {
+                        effect.Parameters[textureSamplerName].SetValue(oldTex);
                     }
                 }
                 foreach (var pass in effect.CurrentTechnique.Passes)
@@ -55,7 +69,7 @@ namespace Mg3d
                 }
                 if (oldTex != null)
                 {
-                    effect.Parameters[textureSamplerName].SetValue(oldTex);
+                    
                 }
             }
             foreach (var childNode in node.Children)
