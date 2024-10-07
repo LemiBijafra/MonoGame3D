@@ -58,14 +58,14 @@ float4 MainPS(VSOutputTx input) : COLOR
     return float4(col, 1.0);
 }
 
-float4x4 WorldViewProjection;
+float4x4 ModelViewProjMx;
 
 VSOutputTx VSBasicTx(VSInputTx vin)
 {
     VSOutputTx vout;
     
     //vout.Position = vin.Position;
-    vout.Position = mul(vin.Position, WorldViewProjection);
+    vout.Position = mul(vin.Position, ModelViewProjMx);
     vout.TexCoord = vin.TexCoord;
 
     return vout;

@@ -21,9 +21,11 @@ namespace Mg3d
                 Material = new Material()
             };
 
-            mesh.Material.Vector4Props ??= new Material.PropMap<Vector4>()
+            var color4d = ConvertColor4D(assimpScene.Materials[assimpMesh.MaterialIndex].ColorDiffuse);
+            mesh.Material.Vector3Props ??= new Material.PropMap<Vector3>()
             {
-                ["DiffuseColor"] = ConvertColor4D(assimpScene.Materials[assimpMesh.MaterialIndex].ColorDiffuse)
+                
+                ["FlatColor"] = new Vector3(color4d.X, color4d.Y, color4d.Z)
             };
 
             var foo = 0;

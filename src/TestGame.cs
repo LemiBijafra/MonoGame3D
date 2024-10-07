@@ -24,7 +24,8 @@ namespace Mg3d
                 singleton = new TestGame();
             }
         }
-        private static Effect tvShader;
+        private Effect tvShader;
+        private Effect stormyNightShader;
         private Effect phongShader;
         private ModelLoader modelLoader;
         public TestGame()
@@ -43,6 +44,7 @@ namespace Mg3d
         {
             //tvShader = Content.Load<Effect>(@"SelfPlayingPong");
             tvShader = Content.Load<Effect>(@"TvNoise");
+            stormyNightShader = Content.Load<Effect>(@"StormyNight");
             phongShader = Content.Load<Effect>(@"Phong");
             LoadImportedScene();
         }
@@ -55,6 +57,7 @@ namespace Mg3d
             myRast.MultiSampleAntiAlias = true;
             GraphicsDevice.RasterizerState = myRast;
             tvShader.Parameters["fTimer"].SetValue(((float)gameTime.TotalGameTime.TotalSeconds));
+            stormyNightShader.Parameters["fTimer"].SetValue(((float)gameTime.TotalGameTime.TotalSeconds));
             DrawImportedScene(GraphicsDevice, gameTime);
         }
         private Mg3d.Node node;
@@ -67,7 +70,8 @@ namespace Mg3d
             // Here we define the shaders for particular meshes:
             meshEffectMap = new Dictionary<string, Effect>
             {
-                { "Screen", tvShader}
+                { "Screen", tvShader},
+                { "Window", stormyNightShader}
             };
         }
         public Matrix EvaluateCamera(double ticks)
@@ -77,15 +81,30 @@ namespace Mg3d
             double angle = (double)((int)ticks % ticksPerCircle) / ticksPerCircle * 2 * Math.PI;
             double x = r * Math.Cos(angle);
             double z = r * Math.Sin(angle);
-            return Matrix.CreateLookAt(new Vector3((float)x, 2, (float)z), new Vector3(0, 1, 0), Vector3.UnitY);
+            return Matrix.CreateLookAt(new Vector3((float)x, 2, (float)z), new Vector3(0, 1.5f, 0), Vector3.UnitY);
         }
         public void DrawImportedScene(GraphicsDevice grDev, GameTime gameTime)
         {
             var viewMx = EvaluateCamera(gameTime.TotalGameTime.TotalMilliseconds);
             var projMx = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60), 800 / 480f, .1f, 100f);
             var overallMx = viewMx * projMx;
-            tvShader.Parameters["WorldViewProjection"].SetValue(overallMx);
-            phongShader.Parameters["WorldViewProjection"].SetValue(overallMx);
+            //TODO set automatically
+            tvShader.Parameters["ModelViewProjMx"].SetValue(overallMx);
+            stormyNightShader.Parameters["ModelViewProjMx"].SetValue(overallMx);
+            phongShader.Parameters["ModelViewProjMx"].SetValue(overallMx);
+            
+            var tmpMx = Matrix.Invert(viewMx);
+            var normMx = Matrix.Transpose(tmpMx);
+            phongShader.Parameters["ModelViewProjMx"].SetValue(overallMx);
+            phongShader.Parameters["ModelViewMx"].SetValue(viewMx);
+            phongShader.Parameters["NormMx"].SetValue(normMx);
+            phongShader.Parameters["PointLightPos"].SetValue(new Vector3(0, 0, 0));
+            phongShader.Parameters["PointLightColor"].SetValue(new Vector3(1, 1, 1));
+            phongShader.Parameters["PointLightIntensity"].SetValue(30f);
+            phongShader.Parameters["PointLightDecayExp"].SetValue(2.7f);
+            phongShader.Parameters["SpecularColor"].SetValue(new Vector3(1, 1, 1));
+            //? phongShader.Parameters["SpecularIntensity"].SetValue(1);
+            phongShader.Parameters["Shininess"].SetValue(29);
             Renderer.DrawNodeRecur(grDev, phongShader, meshEffectMap, node);
         }
         public static void RunIt()

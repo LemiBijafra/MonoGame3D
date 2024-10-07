@@ -21,7 +21,7 @@ namespace Mg3d
         {
             foreach (var mesh in node.Meshes)
             {
-                if (mesh.Name == "Couch")
+                if (mesh.Name == "Window")
                 {
                     var i = 0;
                     ++i;
@@ -37,7 +37,7 @@ namespace Mg3d
                     }
                     else
                     {
-                        effect.Parameters["DiffuseColor"].SetValue(mesh.Material.Vector4Props["DiffuseColor"]);
+                        effect.Parameters["FlatColor"].SetValue(mesh.Material.Vector3Props["FlatColor"]);
                     }
                 }
 
@@ -51,7 +51,7 @@ namespace Mg3d
                         if (mesh.Material.TextureSamplerProps.Exists(textureSamplerName))
                         {
                             effect.Parameters[textureSamplerName].SetValue(mesh.Material.TextureSamplerProps["DiffuseTexture"]);
-                            effect.Parameters["DiffuseColor"].SetValue(new Vector3(0, 0, 0));
+                            effect.Parameters["FlatColor"].SetValue(new Vector3(0, 0, 0));
                         }
                     }
                 }

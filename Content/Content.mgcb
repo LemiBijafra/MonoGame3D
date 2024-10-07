@@ -25,6 +25,12 @@
 /processorParam:DebugMode=Auto
 /build:SelfPlayingPong.fx
 
+#begin StormyNight.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:StormyNight.fx
+
 #begin TvNoise.fx
 /importer:EffectImporter
 /processor:EffectProcessor
