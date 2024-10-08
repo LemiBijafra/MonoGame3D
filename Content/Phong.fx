@@ -75,7 +75,7 @@ void AddPointLight(VSOutputTx vsOut, inout float3 overallColor)
     
     // SPECULAR COMPONENT
     const float3 camDir = normalize(-vsOut.WorldPos);
-    const float specularCoeff = sign(diffuseAtten) *  pow(max(0.0, dot(camDir, reflect(-lightDir, vsOut.Normal))), Shininess);
+    const float specularCoeff = sign(diffuseAtten) * pow(max(0.0, dot(camDir, reflect(-lightDir, vsOut.Normal))), Shininess);
     const float3 specular = specularCoeff * SpecularColor * PointLightColor;
     const float decay = PointLightIntensity / (1. + pow(lightDist, PointLightDecayExp));
     overallColor = decay * (diffuse + specular);

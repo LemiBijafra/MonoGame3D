@@ -21,11 +21,13 @@ namespace Mg3d
         {
             foreach (var mesh in node.Meshes)
             {
-                if (mesh.Name == "Window")
+                // -> Debug stuff
+                if (mesh.Name == "Cage_Bars")
                 {
                     var i = 0;
                     ++i;
                 }
+                // <-
                 Effect effect = implicitEffect;
                 bool explicitEffect = false;
                 if (explicitEffects != null)

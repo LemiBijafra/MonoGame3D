@@ -35,4 +35,4 @@ Since this project is in active development, in case you want to contribute and 
 ## Credits ##
 Apart MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for loading 3D scenes.
 
-For artwork credits, please refer to `ARTWORK_CREDITS.txt`.
+For artwork credits, please refer to `ARTWORK_CREDITS_AND_LICENSES.txt`.
