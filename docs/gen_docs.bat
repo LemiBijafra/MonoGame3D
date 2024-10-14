@@ -1,1 +1,1 @@
-node gen_docs.js
+pandoc ../readme.md additional.md --metadata title="MonoGame 3D" --template toc-sidebar.html --toc -B nav -o index.html

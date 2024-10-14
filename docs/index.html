@@ -1,26 +1,137 @@
-<link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" /><h1 id="monogame3d">MonoGame3D</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+
+    <title>MonoGame 3D</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">code{white-space: pre;}</style>
+    <style type="text/css">.sidebar ul{padding-left: 10px;}</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Pandoc-toc-sidebar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">doc1</a></li>
+            <li><a href="#">doc2</a></li>
+            <li><a href="#">doc3</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <!--<ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          </ul>-->
+          <ul>
+          <li><a href="#monogame3d" id="toc-monogame3d">MonoGame3D</a>
+          <ul>
+          <li><a href="#introduction"
+          id="toc-introduction">Introduction</a></li>
+          <li><a href="#example-project"
+          id="toc-example-project">Example Project</a>
+          <ul>
+          <li><a href="#blender-scene" id="toc-blender-scene">Blender
+          Scene</a></li>
+          <li><a href="#current-rendering-with-the-test-app"
+          id="toc-current-rendering-with-the-test-app">Current Rendering
+          With The Test App</a></li>
+          </ul></li>
+          <li><a href="#building" id="toc-building">Building</a></li>
+          <li><a href="#todo" id="toc-todo">TODO</a></li>
+          <li><a href="#contact" id="toc-contact">Contact</a></li>
+          <li><a href="#credits" id="toc-credits">Credits</a></li>
+          <li><a href="#blender-export" id="toc-blender-export">Blender
+          Export</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+<h1 id="monogame3d">MonoGame3D</h1>
 <p>3D extensions and examples for the awesome MonoGame framework.</p>
 <h2 id="introduction">Introduction</h2>
-<p>The goal of this project is to provide useful additions for doing 3D work on top of the MonoGame framework, in the form of sample code and tutorials for:</p>
-<ul>
-<li>Dynamic loading of 3D scenes.</li>
-<li>Phong shader.</li>
-<li>Importing scenes from Blender.</li>
-<li>Integrating custom shaders (especially from ShaderToy).</li>
-</ul>
+<p>The goal of this project is to provide useful additions for doing 3D
+work on top of the MonoGame framework, in the form of sample code and
+tutorials for: * Dynamic loading of 3D scenes. * Phong shader. *
+Importing scenes from Blender. * Integrating custom shaders (especially
+from ShaderToy).</p>
 <p>No attempt to change the MonoGame sources will be made.</p>
-<h2 id="exampleproject">Example Project</h2>
-<p>A dystopian scene using a number of modified publically available 3D models (see the credits section).</p>
-<h3 id="blenderscene">Blender Scene</h3>
-<p><img src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true" alt="alt text" /></p>
-<h3 id="currentrenderingwiththetestapp">Current Rendering With The Test App</h3>
-<p><img src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true" alt="alt text" /></p>
+<h2 id="example-project">Example Project</h2>
+<p>A dystopian scene using a number of modified publically available 3D
+models (see the credits section).</p>
+<p>Use <code>WASD</code> to move around the scene (WIP).</p>
+<h3 id="blender-scene">Blender Scene</h3>
+<figure>
+<img
+src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true"
+alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure>
+<h3 id="current-rendering-with-the-test-app">Current Rendering With The
+Test App</h3>
+<figure>
+<img
+src="https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true"
+alt="alt text" />
+<figcaption aria-hidden="true">alt text</figcaption>
+</figure>
 <h2 id="building">Building</h2>
-<p>The sample project was done using Visual Studio 2022 on Windows, targeting Desktop GL (i.e. platform agnostic). In case you get a build error mentioning <code>./config/dotnet-tools.json</code> file, open it in Explorer and check the "Unblock" option. Please chime in in case of other issues.
-In case the build fails because of the missing AssimpNet reference, invoke <code>InstallAssimpNet.bat</code>.</p>
+<p>The sample project was done using Visual Studio 2022 on Windows,
+targeting Desktop GL (i.e. platform agnostic). In case you get a build
+error mentioning <code>./config/dotnet-tools.json</code> file, open it
+in Explorer and check the “Unblock” option. Please chime in in case of
+other issues. In case the build fails because of the missing AssimpNet
+reference, invoke <code>InstallAssimpNet.bat</code>.</p>
 <h2 id="todo">TODO</h2>
 <ul>
-<li>Improve the Phong shader (directional and spot lights, transparency), better Blender WYSIWYG.</li>
+<li>Improve the Phong shader (directional and spot lights,
+transparency), better Blender WYSIWYG.</li>
 <li>Finalize the <code>Material</code> class.</li>
 <li>Texture manager for dynamically loaded textures.</li>
 <li>Investigate F# scripting possibilites.</li>
@@ -28,7 +139,50 @@ In case the build fails because of the missing AssimpNet reference, invoke <code
 <li>Animation.</li>
 </ul>
 <h2 id="contact">Contact</h2>
-<p>Since this project is in active development, in case you want to contribute and to avoid work duplication, please read the TODOs and open a discussion item with the changes you'd like to add.</p>
+<p>Since this project is in active development, in case you want to
+contribute and to avoid work duplication, please read the TODOs and open
+a discussion item with the changes you’d like to add.</p>
 <h2 id="credits">Credits</h2>
-<p>Apart MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for loading 3D scenes.</p>
-<p>For artwork credits, please refer to <code>ARTWORK_CREDITS_AND_LICENSES.txt</code>.</p>
+<p>Apart from MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for
+loading 3D scenes.</p>
+<p>For artwork credits, please refer to
+<code>ARTWORK_CREDITS.txt</code>.</p>
+<h2 id="blender-export">Blender Export</h2>
+<p>Currently only Alias Wavefront OBJ files are supported.</p>
+<p>To export an OBJ file from the provided Blender file:</p>
+<figure>
+<img
+src="https://github.com/LemiBijafra/MonoGame3D/blob/main/docs/img/blender_obj_export_opts.png?raw=true"
+alt="Blender OBJ export options" />
+<figcaption aria-hidden="true">Blender OBJ export options</figcaption>
+</figure>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+  </body>
+</html>

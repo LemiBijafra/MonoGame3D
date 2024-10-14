@@ -62,7 +62,7 @@ float4 MainPS(VSOutputTx input) : COLOR
 	;
 	
     float newT = fTimer * 0.4 + sn(float2(fTimer * 1., fTimer * 1.)) * 0.1;
-	p.x-=fTimer*0.2;
+	p.x-=fTimer * .01;
 	
 	p.y*=1.3;
 	float f2=

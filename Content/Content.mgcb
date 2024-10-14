@@ -13,6 +13,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin OilFlow.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:OilFlow.fx
+
 #begin Phong.fx
 /importer:EffectImporter
 /processor:EffectProcessor

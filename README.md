@@ -12,8 +12,12 @@ No attempt to change the MonoGame sources will be made.
 
 ## Example Project ##
 A dystopian scene using a number of modified publically available 3D models (see the credits section).
+
+Use `WASD` to move around the scene (WIP).
+
 ### Blender Scene ###
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot_Blender.png?raw=true)
+
 ### Current Rendering With The Test App ###
 ![alt text](https://github.com/LemiBijafra/MonoGame3D/blob/main/Screenshot.png?raw=true)
 
@@ -33,6 +37,6 @@ In case the build fails because of the missing AssimpNet reference, invoke `Inst
 Since this project is in active development, in case you want to contribute and to avoid work duplication, please read the TODOs and open a discussion item with the changes you'd like to add.
 
 ## Credits ##
-Apart MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for loading 3D scenes.
+Apart from MonoGame v3.8.2, the AssimpNet library v4.1.0 is used for loading 3D scenes.
 
-For artwork credits, please refer to `ARTWORK_CREDITS_AND_LICENSES.txt`.
+For artwork credits, please refer to `ARTWORK_CREDITS.txt`.
