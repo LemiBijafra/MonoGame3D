@@ -16,7 +16,7 @@ TV noise shader:
 Pong shader:
     Somewhere from ShaderToy too.
 Painting on the wall:
-    Created by LemiBijafra: Creative Commons CC BY License (https://creativecommons.org/licenses/by/4.0/)
+    Created by LemiBijafra: Created by LemiBijafra: CC BY-NC-SA 4.0: Attribution-NonCommercial-ShareAlike 4.0 International
 Wall paint:
     https://freestocktextures.com/texture/white-peeling-wall,1413.html (license: https://freestocktextures.com/license/)
 Wood floor:
